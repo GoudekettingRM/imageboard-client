@@ -26,7 +26,7 @@ export function login(email, password) {
       const action = loggedOn(loginResponse.data.jwt);
       dispatch(action);
     } catch (error) {
-      console.log("response.data.error test", error.response);
+      // console.log("response.data.error test", error.response);
 
       const action = loginFailed(error.response.data.message);
       dispatch(action);
