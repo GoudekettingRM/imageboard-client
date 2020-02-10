@@ -1,5 +1,5 @@
 import axios from "axios";
-export const baseUrl = "http://localhost:4000";
+export const baseUrl = "https://imageboard-robin.herokuapp.com";
 
 function allImages(images) {
   return {
