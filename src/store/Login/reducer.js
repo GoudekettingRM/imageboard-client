@@ -1,5 +1,4 @@
 const initialState = {
-  loggedIn: false,
   jwt: "",
   message: ""
 };
@@ -14,7 +13,6 @@ export default function loginReducer(state = initialState, action) {
     }
     case "login/SET_NEW_JWT": {
       return {
-        loggedIn: true,
         jwt: action.payload,
         message: "Login successful"
       };

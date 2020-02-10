@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import ImagesList from "./ImagesList";
 import { getAllImages } from "../../store/Image/actions";
 import AddNewImageContainer from "../AddNewImage/AddNewImageContainer";
+import LoginFormContainer from "../Login/LoginFormContainer";
 
 class ImagesListContainer extends Component {
   componentDidMount = () => {
@@ -12,7 +13,8 @@ class ImagesListContainer extends Component {
   render() {
     return (
       <div>
-        <AddNewImageContainer />
+        {this.props.loggedIn && <AddNewImageContainer />}
+        {!this.props.loggedIn && <LoginFormContainer />}
         <ImagesList images={this.props.images} />
       </div>
     );
@@ -21,7 +23,8 @@ class ImagesListContainer extends Component {
 
 function mapStateToProps(reduxState) {
   return {
-    images: reduxState.images
+    images: reduxState.images,
+    loggedIn: reduxState.user.jwt
   };
 }
 

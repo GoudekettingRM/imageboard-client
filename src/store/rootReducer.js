@@ -4,5 +4,5 @@ import loginReducer from "./Login/reducer";
 
 export default combineReducers({
   images: imageReducer,
-  loginData: loginReducer
+  user: loginReducer
 });
