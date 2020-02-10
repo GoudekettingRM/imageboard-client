@@ -16,7 +16,8 @@ export function getAllImages() {
     try {
       if (images.length === 0) {
         const images = await axios.get(`${baseUrl}/images`);
-        const action = allImages(images);
+
+        const action = allImages(images.data);
 
         dispatch(action);
       }
