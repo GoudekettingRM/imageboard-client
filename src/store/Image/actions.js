@@ -22,7 +22,8 @@ export function addImage(imageData) {
         url: imageData.url,
         title: imageData.title
       });
-      const action = addNewImageToStore(newImage);
+
+      const action = addNewImageToStore(newImage.data);
       dispatch(action);
     } catch (error) {
       throw error;
