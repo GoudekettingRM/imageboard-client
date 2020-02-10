@@ -15,13 +15,21 @@ function addNewImageToStore(imageData) {
   };
 }
 
-export function addImage(imageData) {
+export function addImage(imageData, token) {
   return async (dispatch, getState) => {
     try {
-      const newImage = await axios.post(`${baseUrl}/images`, {
-        url: imageData.url,
-        title: imageData.title
-      });
+      const newImage = await axios.post(
+        `${baseUrl}/images`,
+        {
+          url: imageData.url,
+          title: imageData.title
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + token
+          }
+        }
+      );
 
       const action = addNewImageToStore(newImage.data);
       dispatch(action);

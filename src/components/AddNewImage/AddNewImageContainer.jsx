@@ -24,7 +24,7 @@ class AddNewImageContainer extends Component {
       title: this.state.title,
       url: this.state.url
     };
-    this.props.addImage(imgData);
+    this.props.addImage(imgData, this.props.token);
 
     this.setState({
       title: "",
@@ -47,8 +47,17 @@ class AddNewImageContainer extends Component {
   }
 }
 
+function mapStateToProps(reduxState) {
+  return {
+    token: reduxState.user.jwt
+  };
+}
+
 const mapDispatchToProps = {
   addImage
 };
 
-export default connect(null, mapDispatchToProps)(AddNewImageContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddNewImageContainer);
