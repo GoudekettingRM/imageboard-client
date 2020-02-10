@@ -7,6 +7,7 @@ export default class Header extends Component {
       <div>
         <Link to="/images">Images</Link>
         {/* <Link to="/upload">Add image to board!</Link> */}
+        <Link to="/login">Login</Link>
       </div>
     );
   }

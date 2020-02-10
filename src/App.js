@@ -5,6 +5,7 @@ import ImagesListContainer from "./components/ImagesList/ImagesListContainer";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import AddNewImageContainer from "./components/AddNewImage/AddNewImageContainer";
+import LoginFormContainer from "./components/Login/LoginFormContainer";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/images" exact component={ImagesListContainer} />
+          <Route path="/login" exact component={LoginFormContainer} />
           <Route path="/upload" exact component={AddNewImageContainer} />
         </Switch>
       </div>
