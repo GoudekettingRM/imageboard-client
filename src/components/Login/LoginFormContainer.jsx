@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import LoginForm from "./LoginForm";
+import { connect } from "react-redux";
+import { login } from "../../store/Login/actions";
 
-export default class LoginFormContainer extends Component {
+class LoginFormContainer extends Component {
   state = {
     email: "",
     password: ""
@@ -20,7 +22,7 @@ export default class LoginFormContainer extends Component {
     console.log("email test after submitting", this.state.email);
 
     // actually send stuff to the api to login
-
+    this.props.login(this.state.email, this.state.password);
     this.setState({
       email: "",
       password: ""
@@ -38,3 +40,9 @@ export default class LoginFormContainer extends Component {
     );
   }
 }
+
+const mapDispatchToProps = {
+  login
+};
+
+export default connect(null, mapDispatchToProps)(LoginFormContainer);
