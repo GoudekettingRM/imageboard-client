@@ -33,7 +33,7 @@ class AddNewImageContainer extends Component {
   };
 
   render() {
-    console.log("render of add new image container", this.props);
+    // console.log("render of add new image container", this.props);
 
     return (
       <div>

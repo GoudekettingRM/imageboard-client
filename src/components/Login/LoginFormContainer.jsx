@@ -17,9 +17,6 @@ class LoginFormContainer extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    console.log("Submitting login");
-    console.log("password test after submitting", this.state.password);
-    console.log("email test after submitting", this.state.email);
 
     // actually send stuff to the api to login
     this.props.login(this.state.email, this.state.password);

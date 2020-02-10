@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class ImagesList extends Component {
   render() {
-    console.log("Render of image list", this.props);
+    // console.log("Render of image list", this.props);
 
     if (this.props.images.length === 0) {
       return <div>No Images to show!</div>;

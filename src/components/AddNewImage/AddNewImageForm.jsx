@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function AddNewImageForm(props) {
-  console.log("render of add new image form", props);
+  // console.log("render of add new image form", props);
   const { onChange, onSubmit } = props;
   const { title, url } = props.values;
 
