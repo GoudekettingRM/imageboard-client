@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
+import { Switch, Route } from "react-router";
+import ImagesListContainer from "./components/ImagesList/ImagesListContainer";
+import Home from "./components/Home/Home";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello World</h1>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/images" exact component={ImagesListContainer} />
+        </Switch>
       </div>
     );
   }
