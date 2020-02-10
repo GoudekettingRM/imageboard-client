@@ -8,6 +8,28 @@ function allImages(images) {
   };
 }
 
+function addNewImageToStore(imageData) {
+  return {
+    type: "images/ADD_IMAGE_TO_STORE",
+    payload: imageData
+  };
+}
+
+export function addImage(imageData) {
+  return async (dispatch, getState) => {
+    try {
+      const newImage = await axios.post(`${baseUrl}/images`, {
+        url: imageData.url,
+        title: imageData.title
+      });
+      const action = addNewImageToStore(newImage);
+      dispatch(action);
+    } catch (error) {
+      throw error;
+    }
+  };
+}
+
 export function getAllImages() {
   return async (dispatch, getState) => {
     const state = getState();
